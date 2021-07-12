@@ -1,5 +1,4 @@
-# srpgstudio
-BlindCoco's SRPG Studio Scripts
+# BlindCoco's SRPG Studio Scripts
 
 Hello there! 
 This git is a bit bare right now, but I'll add some fun plugins soon!
