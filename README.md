@@ -4,4 +4,6 @@ Hello there!
 
 This git is a bit bare right now, but I'll add some fun plugins soon!  
 
-I just wanted to get this posted as soon as possible to share the quickfix for the anim crashes from the July 12th 2021 update.
+If you like my work or if you find any bugs with my plugins, feel free to reach out on Discord: blindcoco#8026
+
+Cheers!
