@@ -111,18 +111,23 @@ var PloySkills = {
 			  case "Str":
 			    	sourceValue = RealBonus.getStr(pSource);
 			    	targetValue = RealBonus.getStr(pTarget);
+			    break;
 			  case "Mag":
 			    	sourceValue = RealBonus.getMag(pSource);
 			    	targetValue = RealBonus.getMag(pTarget);
+			    break;
 			  case "Spd":
 			    	sourceValue = RealBonus.getSpd(pSource);
 			    	targetValue = RealBonus.getSpd(pTarget);
+			    break;
 			  case "Skl":
 			    	sourceValue = RealBonus.getSkl(pSource);
 			    	targetValue = RealBonus.getSkl(pTarget);
+			    break;
 			  case "Luk":
 			    	sourceValue = RealBonus.getLuk(pSource);
 			    	targetValue = RealBonus.getLuk(pTarget);
+			    break;
 			  case "Def":
 			    	sourceValue = RealBonus.getDef(pSource);
 			    	targetValue = RealBonus.getDef(pTarget);
@@ -149,7 +154,7 @@ var PloySkills = {
 				canPloy = false;
 			}
 		}
-
+		
 		if(canPloy){
 	        StateControl.arrangeState(pTarget, ployState, IncreaseType.INCREASE);
 		}

@@ -62,3 +62,6 @@ This plugin enables Ploy skills (like in Fire Emblem Heroes), with some extra op
 History
 1.0 - August 11th 2021
     - Initial version
+
+1.1 - August 12th 2021
+    - Fixed typo with stat types in switchcase
