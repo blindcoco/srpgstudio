@@ -1,6 +1,6 @@
 Ploy Skills
 By Blindcoco
-Version 1.0
+Version 1.2
 August 11th 2021
 
 This plugin enables Ploy skills (like in Fire Emblem Heroes), with some extra options! 
@@ -65,3 +65,6 @@ History
 
 1.1 - August 12th 2021
     - Fixed typo with stat types in switchcase
+
+1.2 - August 12th 2021
+    - Fixed issue with canto & ploy displays

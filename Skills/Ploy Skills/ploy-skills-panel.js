@@ -137,6 +137,18 @@ CustomUnitRangePanel = defineObject(UnitRangePanel, {
 		
 		return obj;
     },
+
+	setRepeatUnit: function(unit) {
+		this._unit = unit;
+		if (unit === null) {
+			return;
+		}
+
+		this._x = unit.getMapX();
+		this._y = unit.getMapY();
+		
+		this._setRepeatRangeData();
+	},
     
     _setRangeData: function() {
 		var attackRange = this.getUnitAttackRange(this._unit);
@@ -151,6 +163,24 @@ CustomUnitRangePanel = defineObject(UnitRangePanel, {
 		}
 		
 		this._setLight(isWeapon);
+		
+		var skillArrPloys = SkillControl.getDirectSkillArray(this._unit, SkillType.CUSTOM, "ploy-skill");
+		this._setLightPloy(skillArrPloys);
+    },
+    
+    _setRepeatRangeData: function() {
+		var attackRange = this.getUnitAttackRange(this._unit);
+		var isWeapon = attackRange.endRange !== 0;
+		this._indexPloy = null;
+		if (isWeapon) {
+			this._simulator.startSimulationWeapon(this._unit, attackRange.mov, attackRange.startRange, attackRange.endRange);
+			this._indexWeapon = this._simulator.getSimulationWeaponIndexArray();
+		}
+		else {
+			this._simulator.startSimulation(this._unit, attackRange.mov);
+		}
+		
+		this._setLight(false);
 		
 		var skillArrPloys = SkillControl.getDirectSkillArray(this._unit, SkillType.CUSTOM, "ploy-skill");
 		this._setLightPloy(skillArrPloys);
