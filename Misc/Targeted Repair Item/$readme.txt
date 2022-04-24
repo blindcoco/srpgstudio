@@ -20,6 +20,8 @@ weaponTypes -> These have to be the Name (with the proper upper/lower cases) of 
 
 Note: This plugin will clash with other plugins that affect the function Miscellaneous.isDurabilityChangeAllowed
 Note 2: There is a hardcoded lock on repairing repair items to prevent infinite repairs
+Note 3: Removed the default behavior allowing repairs of undamaged item to limit misclicks
+Note 4: Repair Items without custom parameters will not work anymore once plugin is installed. If you want to make a general repair item, use { repairTypes: ["Weapon", "Staff", "Item"] } 
 
 History
 1.0 - April 23rd 2022
