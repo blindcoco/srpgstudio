@@ -16,13 +16,24 @@ Miscellaneous.isDurabilityChangeAllowed = function(item, targetItem) {
 		return false;
 	}
 
+	// Overwrites repairTypes or weaponTypes if repairLabel is true
+	if( item.custom.repairLabels && item.custom.repairLabels.indexOf(targetItem.custom.repairLabel) != -1 ) {
+		return true;
+	}
+
+	if (item.custom.excludeLabels && targetItem.custom.repairLabel && item.custom.excludeLabels.indexOf(targetItem.custom.repairLabel == -1)) {
+		return false;
+	}
+	
 	// Verifies weapons for repair
 	if( targetItem.isWeapon() ) {
 		// Repair Item can repair weapons
-		if( item.custom.repairTypes.indexOf("Weapon") != -1 ) {
+		if( item.custom.repairTypes && item.custom.repairTypes.indexOf("Weapon") != -1 ) {
+			
+
 			if( item.custom.weaponTypes ) {
 				// Weapon type is repaired by item
-				if( item.custom.weaponTypes.indexOf(targetItem.getWeaponType().getName()) != -1 ) { 
+				if( item.custom.weaponTypes && item.custom.weaponTypes.indexOf(targetItem.getWeaponType().getName()) != -1 ) { 
 					return true;
 				} else {
 					// Weapon type is NOT repaired by item
@@ -45,7 +56,7 @@ Miscellaneous.isDurabilityChangeAllowed = function(item, targetItem) {
 		}
 
 		// If repair item can repair staves
-		if(targetItem.isWand() && item.custom.repairTypes.indexOf("Staff") != -1) {
+		if(targetItem.isWand() && item.custom.repairTypes && item.custom.repairTypes.indexOf("Staff") != -1) {
 			return true;
 		} else if (!targetItem.isWand() && item.custom.repairTypes.indexOf("Item") != -1) {
 			return true;
