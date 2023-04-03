@@ -1,7 +1,7 @@
 Distance Damage Modifiers
 By Blindcoco
-Version 1.0
-August 7th 2021
+Version 1.1
+April 3rd 2023
 
 This plugin allows the use of damage modifiers based on the distance between two opponents.
 
@@ -25,8 +25,13 @@ This plugin allows the use of damage modifiers based on the distance between two
     - This can be equipped on weapons (making bows that have 2-3 range, but deal less damage at 3 range, for example).
     - You can equip multiple distance-modifiers at once, so it's possible to make a character who takes more damage at melee range, but deals more damage at a distance, for example.
     - You can make a single skill that describes multiple modifiers that are spread in multiple skills, but check the Hide on the Menu box to avoid clutter.
+    - You may add a requiresSkill parameter to the custom data to require a custom skill keyword to apply bonuses. Allowing you to make a unit who takes extra damage at melee range with bows equipped, for instance.
+            --- You would need to add a custom skill to all bows in this case. 
 
 
 History
 1.0 - August 7th 2021
     - Initial version
+
+1.1 - April 3rd 2023
+    - Added requiresSkill optional parameter

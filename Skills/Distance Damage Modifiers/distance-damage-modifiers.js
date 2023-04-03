@@ -18,9 +18,11 @@ DamageCalculator.calculateAttackPower = function(active, passive, weapon, isCrit
     for (var i=0; i<skillArrActive.length; i++) {
         skill = skillArrActive[i].skill;
 
-        if(skill != null){
-            if(distance >= skill.custom.minRange && (distance <= skill.custom.maxRange || skill.custom.maxRange == -1)){
-                power += skill.custom.dealtMod;
+        if(skill != null) {
+            if(!skill.custom.requiresSkill || SkillControl.getPossessionCustomSkill(active, skill.custom.requiresSkill)) {
+                if(distance >= skill.custom.minRange && (distance <= skill.custom.maxRange || skill.custom.maxRange == -1)){
+                    power += skill.custom.dealtMod;
+                }
             }
         }
     }
@@ -33,8 +35,10 @@ DamageCalculator.calculateAttackPower = function(active, passive, weapon, isCrit
         skill = skillArrPassive[i].skill;
 
         if(skill != null){
-            if(distance >= skill.custom.minRange && (distance <= skill.custom.maxRange || skill.custom.maxRange == -1)){
-                power += skill.custom.takenMod;
+            if(!skill.custom.requiresSkill |! SkillControl.getPossessionCustomSkill(passive, skill.custom.requiresSkill)) {
+                if(distance >= skill.custom.minRange && (distance <= skill.custom.maxRange || skill.custom.maxRange == -1)){
+                    power += skill.custom.takenMod;
+                }
             }
         }
     }
